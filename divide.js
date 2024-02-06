@@ -18,6 +18,14 @@ function divide() {
     }, argumentsArray[0]);
 };
 
+
+/**
+ * Removes arguments of types that are not allowed.
+ *
+ * @param {string} allowedType - The type of arguments that are allowed.
+ * @param {Array} arguments - The arguments to filter.
+ * @returns {Array} - The filtered arguments.
+ */
 function removeNotExpectedTypesFromArguments(allowedType, arguments){
     newArguments = [];
 
