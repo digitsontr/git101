@@ -5,7 +5,7 @@ Divides a series of numbers.
 @returns {number} - The result of the division.
 */
 function divide() {
-    const argumentsArray = removeNotExpectedTypesFromArguments('number', arguments)
+    const argumentsArray = removeUnexpectedTypesFromArguments('number', arguments)
 
     return argumentsArray.slice(1).reduce((result, argument) => {
         if(result === 0 && argument === 0){
@@ -23,13 +23,13 @@ function divide() {
  * Removes arguments of types that are not allowed.
  *
  * @param {string} allowedType - The type of arguments that are allowed.
- * @param {Array} arguments - The arguments to filter.
+ * @param {Array} args - The arguments to filter.
  * @returns {Array} - The filtered arguments.
  */
-function removeNotExpectedTypesFromArguments(allowedType, arguments){
-    newArguments = [];
+function removeUnexpectedTypesFromArguments(allowedType, args){
+    const newArguments = [];
 
-    for (let arg of Array.from(arguments)) {
+    for (let arg of Array.from(args)) {
         if (typeof arg === allowedType && !(allowedType === 'number' && Number.isNaN(arg))) {
           newArguments.push(arg);
         }
